@@ -4,6 +4,8 @@
 
 Hugo ET-HD is an accessibility-enhanced[^2], micro-typography-focused, minimalist Hugo theme for enabling wider audience.
 
+Temporary unmantained for an unspecified time.
+
 ## Design Philosophy
 
 The main goals of the design is to be accessible, simplified and remain timeless.
