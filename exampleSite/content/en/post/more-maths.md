@@ -4,7 +4,7 @@ meta = false
 author = "AUTHOR NAME"
 date = "2016-07-20T13:56:01-08:00"
 type = "post"
-title = "More math $\\xi_{(even-in-the-title-!)}$"
+title = "More math"
 subtitle = "Wow this really works ! "
 toc = true
 categories = ["katex", "latex", "tufte-css"]
@@ -14,34 +14,28 @@ A compilation of $\LaTeX$ formulas...
 
 ## Matrix 
 
-<p>
 $$
 \begin{matrix}
 \alpha& \beta^{*}\\
 \gamma^{*}& \delta
 \end{matrix}
 $$
-</p>
 
-<p>
 $$
 \begin{bmatrix}
 \alpha& \beta^{*}\\
 \gamma^{*}& \delta
 \end{bmatrix}
 $$
-</p>
 
 
 
-<p>
 $$
 \begin{Vmatrix}
 \alpha& \beta^{*}\\
 \gamma^{*}& \delta
 \end{Vmatrix}
 $$
-</p>
 
 ## Limits
 

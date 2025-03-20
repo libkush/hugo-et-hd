@@ -24,7 +24,7 @@ Hugo tersedia dengan beberapa [Shortcode Bawaan](https://gohugo.io/content-manag
 
 ## Shortcode Twitter Sederhana
 
-{{< twitter_simple 1085870671291310081 >}}
+{{< x user="SanDiegoZoo" id="1453110110599868418" >}}
 
 <br>
 
