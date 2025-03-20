@@ -88,8 +88,8 @@ div > time,
 	display: block;
 	position: relative;
 	padding: 1rem 1ex !important;
-	margin-top: 7rem;
-	border-top: 1px solid var(--ink);
+	/* margin-top: 7rem; */
+	/* border-top: 1px solid var(--ink); */
 	column-gap: 2rem;
 }
 #mainfooter,
@@ -281,7 +281,7 @@ footer.clear .ifwide {
 #a11y[open] > summary,
 #a11y > summary:focus,
 #a11y > summary:hover {
-	background-color: #ff0;
+	background-color: #aeb7ff;
 	color: #36c;
 }
 #panelA11y {
@@ -494,7 +494,7 @@ audio > center > div {
 	padding: 1rem;
 	margin: 1rem;
 	border: 1px solid var(--ink);
-	background-color: #ff0;
+	background-color: #aeb7ff;
 	color: var(--ink);
 }
 /* task */
@@ -543,6 +543,9 @@ li:has(input)::marker {
 	}
 	.footnotes ol {
 		padding-left: 2rem;
+	}
+	#copyURL {
+		display: none;
 	}
 }
 @media only screen and (max-width: 640px) {

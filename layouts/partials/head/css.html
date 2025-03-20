@@ -1,7 +1,7 @@
 {{- $base := resources.Get "css/ethd.css" -}}
 {{- $hugo := resources.Get "css/ethd--go.css" -}}
 {{- $icon := resources.Get "css/ethd-icon.css" -}}
-{{- $style := slice $base $hugo $icon | resources.Concat "css/ethd-style.css" | minify }}
+{{- $style := slice $base $hugo $icon | resources.Concat "css/ethd-style.css" | postCSS | minify }}
 {{- if eq hugo.Environment "development" }}
 	<link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}">
 {{- else }}
@@ -19,10 +19,9 @@
         }
     </style>
 {{- else }}
-    {{- $fonts := resources.Get "css/ethd-fonts.css" -}}
-    {{- if .Site.Params.LocalFonts }}{{ $fonts = resources.Get "css/ethd-fonts-local.css" }}{{ end }}
-        {{- $fontsMin := $fonts | resources.Minify }}
-        <link rel="stylesheet" type="text/css" href="{{ $fontsMin.Permalink }}">
+    {{- $fonts := resources.Get "css/ethd-fonts.css" | postCSS | minify -}}
+    {{- if .Site.Params.LocalFonts }}{{ $fonts = resources.Get "css/ethd-fonts-local.css" | postCSS | minify }}{{ end }}
+        <link rel="stylesheet" type="text/css" href="{{ $fonts.RelPermalink }}">
 {{- end }}
 
 {{- define "partials/head/css/init.html" }}
@@ -55,11 +54,11 @@
 			{{- end }}
 		{{- else if eq .Scheme "dark" }}
 			{{- if eq .Contrast (or "low" "less") }}
-				--off: #fff; --fg: #e7e2e2; --mid: #7d8490; --ac: #ff0; --bg: #13253d;
+				--off: #fff; --fg: #e7e2e2; --mid: #7d8490; --ac: #aeb7ff; --bg: #13253d;
 			{{- else if eq .Contrast (or "high" "more") }}
-				--off: #fff; --fg: #fff; --mid: gray; --ac: #ff0; --bg: #000;
+				--off: #fff; --fg: #fff; --mid: gray; --ac: #aeb7ff; --bg: #000;
 			{{- else }}
-				--off: #fff; --fg: #f0f0f0; --mid: gray; --ac: #ff0; --bg: #111;
+				--off: #fff; --fg: #f0f0f0; --mid: gray; --ac: #aeb7ff; --bg: #111;
 			{{- end }}
 		{{- end }}
 	{{- end }}

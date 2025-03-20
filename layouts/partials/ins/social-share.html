@@ -10,7 +10,7 @@
 <nav aria-labelledby="sh">
 	<ul class="unmark"
 		role="presentation">
-		<li><a href="whatsapp://send?text={{ .Title | htmlEscape }}%20{{ .Permalink }}"
+		{{/*  <li><a href="whatsapp://send?text={{ .Title | htmlEscape }}%20{{ .Permalink }}"
 				class="plain"
 				target="_blank"
 				rel="noopener noreferrer"
@@ -22,8 +22,8 @@
 					{{ i18n "shareTo" }} Whatsapp
 				</i>
 			</a>
-		</li>
-		<li><a href="https://telegram.me/share/url?text={{ .Title | htmlEscape }}&amp;url={{ .Permalink }}"
+		</li>  */}}
+		{{/*  <li><a href="https://telegram.me/share/url?text={{ .Title | htmlEscape }}&amp;url={{ .Permalink }}"
 				class="plain"
 				target="_blank"
 				rel="noopener noreferrer"
@@ -35,8 +35,8 @@
 					{{ i18n "shareTo" }} Telegram
 				</i>
 			</a>
-		</li>
-		<li><a href="https://facebook.com/sharer/sharer.php?u={{ .Permalink }}"
+		</li>  */}}
+		{{/*  <li><a href="https://facebook.com/sharer/sharer.php?u={{ .Permalink }}"
 				class="plain"
 				target="_blank"
 				rel="noopener noreferrer"
@@ -48,8 +48,8 @@
 					{{ i18n "shareTo" }} Facebook
 				</i>
 			</a>
-		</li>
-		<li><a href="https://twitter.com/intent/tweet/?text={{ .Title | htmlEscape }}&amp;url={{ .Permalink }}"
+		</li>  */}}
+		{{/*  <li><a href="https://twitter.com/intent/tweet/?text={{ .Title | htmlEscape }}&amp;url={{ .Permalink }}"
 				class="plain"
 				target="_blank"
 				rel="noopener noreferrer"
@@ -61,7 +61,7 @@
 					{{ i18n "shareTo" }} Twitter
 				</i>
 			</a>
-		</li>
+		</li>  */}}
 		<li><a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ .Permalink }}&amp;title={{ .Title | htmlEscape }}&amp;summary={{ .Title | htmlEscape }}&amp;source={{ .Permalink }}"
 				class="plain"
 				target="_blank"
@@ -88,7 +88,7 @@
 				</i>
 			</a>
 		</li>
-		<li><a href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title={{ .Title | htmlEscape }}&amp;caption={{ .Title | htmlEscape }}&amp;content={{ .Permalink }}&amp;canonicalUrl={{ .Permalink }}"
+		{{/*  <li><a href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title={{ .Title | htmlEscape }}&amp;caption={{ .Title | htmlEscape }}&amp;content={{ .Permalink }}&amp;canonicalUrl={{ .Permalink }}"
 				class="plain"
 				target="_blank"
 				rel="noopener noreferrer"
@@ -100,8 +100,8 @@
 					{{ i18n "shareTo" }} Tumblr
 				</i>
 			</a>
-		</li>
-		<li><a href="https://pinterest.com/pin/create/button/?url={{ .Permalink }}&amp;media={{ .Permalink }}&amp;description={{ .Title | htmlEscape }}"
+		</li>  */}}
+		{{/*  <li><a href="https://pinterest.com/pin/create/button/?url={{ .Permalink }}&amp;media={{ .Permalink }}&amp;description={{ .Title | htmlEscape }}"
 				class="plain"
 				target="_blank"
 				rel="noopener noreferrer"
@@ -113,7 +113,7 @@
 					{{ i18n "shareTo" }} Pinterest
 				</i>
 			</a>
-		</li>
+		</li>  */}}
 		<li><a href="mailto:?subject={{ .Title | htmlEscape }}&amp;body={{ .Permalink }}"
 				class="plain"
 				rel="noopener noreferrer"

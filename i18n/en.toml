@@ -74,9 +74,9 @@
 [tagged]
 	other = "Tagged with"
 [sharePage]
-	other = "Share this page!"
+	other = "Share"
 [shareArticle]
-	other = "Share this post!"
+	other = "Share"
 [shareTo]
 	other = 'Share to'
 [inNewTab]
@@ -95,8 +95,8 @@
 	other = "Read Next"
 [colophon]
 	other = 'colophon'
-[colophontext]
-	other = 'Powered by Hugo with Hugo ET-HD Theme'
+# [colophontext]
+# 	other = 'Powered by Hugo with Hugo ET-HD Theme'
 [date_iso]
 	other = "2006-01-02"
 [date_post]

@@ -12,7 +12,7 @@
     aria-label="{{ i18n $taxonomy (len .) }}">
         {{ range . }}
         <li>
-            <a href="{{ .Page.Permalink }}"
+            <a href="{{ .Page.RelPermalink }}"
                 class="{{ if $tag }}inverse{{ else }}plain{{ end }}"
                 aria-label="{{ i18n $taxonomy 1 }}:{{ .Page.Title }}"
                 >

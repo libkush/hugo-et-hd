@@ -2,8 +2,8 @@
 {{- $bionread := resources.Get "js/bionread.js" -}}
 {{- $color := resources.Get "js/override-color.js" -}}
 {{- $font := resources.Get "js/override-fonts.js" -}}
-{{- $a11y := slice $legibility $bionread $color $font | resources.Concat "js/a11y.js" | resources.Fingerprint "sha384" }}
-<script defer src="{{ $a11y.Permalink }}" integrity="{{ $a11y.Data.Integrity }}" crossorigin="anonymous"></script>
+{{- $a11y := slice $legibility $bionread $color $font | resources.Concat "js/a11y.js" | minify | resources.Fingerprint }}
+<script defer src="{{ $a11y.RelPermalink }}" integrity="{{ $a11y.Data.Integrity }}" crossorigin="anonymous"></script>
 
 {{- with site.Params.Initial }}
 	{{- with .FontScale }}

@@ -1,5 +1,22 @@
 {{- $type := .Get "type" }}
 {{- $figID := print "fig-" .Page.File.UniqueID "-" .Ordinal }}
+
+{{- $quality := .Get "quality" | default "photo" -}}
+{{- $imgurl := cast.ToString (.Get "src") -}}
+{{- $image := resources.GetRemote $imgurl -}}
+<!-- get the image after processing -->
+{{- if hasPrefix $imgurl "http" -}}
+{{- $image = resources.GetRemote $imgurl -}}
+{{ else }}
+{{- $image = .Page.Resources.Get $imgurl -}}
+{{- end -}}
+{{- $keepsize := .Get "type" -}}
+{{- if eq $keepsize "full" -}}
+{{- $image = $image.Resize (print (printf "%dx webp " $image.Width) $quality) -}}
+{{- else -}}
+{{- $image = $image.Resize (print "600x webp " $quality) -}}
+{{- end -}}
+
 {{- if not (eq $type "margin") }}
 	{{- if eq $type "full" }}<figure class="fullwidth">
 	{{- else }}<figure {{ with .Get "class" }} class="{{ . }}"{{ end }}>
@@ -7,7 +24,11 @@
 {{- end }}
 {{- if eq $type "full" }}
 	{{- with .Get "link" }}<a href="{{ . }}">{{ end }}
-		<img src="{{ .Get "src" }}"
+		<img 
+			loading="lazy" 
+			src="{{ $image.RelPermalink }}"
+			width="{{ $image.Width }}"
+			height="{{ $image.Height }}"
 			{{ with .Get "alt" }}
 				alt=" {{ . }}"
 				title="{{ . }}"
@@ -31,7 +52,16 @@
 	{{- if eq $type "margin" }}
 		{{- with .Get "link" }}<a href="{{ . }}">
 		{{- end }}
-			<img src="{{ .Get "src" }}" {{ with .Get "alt" }} alt=" {{ . }}" title="{{ . }}" {{ end }} aria-describedby="{{ $figID }}">
+			<img 
+				src="{{ $image.RelPermalink }}"
+				width="{{ $image.Width }}"
+				height="{{ $image.Height }}" 
+				loading="lazy" 
+				{{ with .Get "alt" }}
+				alt=" {{ . }}"
+				title="{{ . }}" 
+				{{ end }}
+				aria-describedby="{{ $figID }}">
 		{{- if .Get "link" }}</a>{{ end }}
 	{{- end }}
 {{- end }}
@@ -47,7 +77,11 @@
 {{- end }}
 {{- if and (not (eq $type "full")) (not (eq $type "margin")) }}
 	{{ with .Get "link" }}<a href="{{ . }}">{{ end }}
-		<img src="{{ .Get "src" }}"
+		<img
+			src="{{ $image.RelPermalink }}"
+			width="{{ $image.Width }}"
+			height="{{ $image.Height }}" 
+			loading="lazy" 
 			{{- with .Get "alt" }}
 				alt="{{ . }}"
 				title="{{ . }}" 

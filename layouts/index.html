@@ -1,7 +1,7 @@
 {{- define "head" }}
-{{- $feedSty := resources.Get "css/ethd--go-feed.css" -}}
-{{- $feedMin := $feedSty | resources.Minify }}
-<link rel="stylesheet" type="text/css" href="{{ $feedMin.Permalink }}">
+{{- with resources.Get "css/ethd--go-feed.css" |postCSS | minify -}}
+	<link rel="stylesheet" type="text/css" href="{{ .RelPermalink }}">
+{{- end -}}
 {{- partialCached "home/landing-page-style.html" (dict "page" .) -}}
 {{- end }}
 
@@ -263,9 +263,9 @@
 	{{- $feed := $page.Paginate ( where site.RegularPages "Type" "post" ) }}
 	{{- if not $feed.HasPrev }}
 		{{- if site.Params.Home.Slider }}
-		{{- $carousellSty := resources.Get "css/ethd--go-carousell.css" -}}
-		{{- $carousellMin := $carousellSty | resources.Minify }}
-		<link rel="stylesheet" type="text/css" href="{{ $carousellMin.Permalink }}">
+		{{- with resources.Get "css/ethd--go-carousell.css" | postCSS | minify -}}
+			<link rel="stylesheet" type="text/css" href="{{ .RelPermalink }}">
+		{{- end -}}
 		<style>
 			.floating {
 				animation: float 5s ease-in-out infinite;

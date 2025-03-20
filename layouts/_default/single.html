@@ -158,7 +158,7 @@
 	<img
 		alt="{{ i18n "featuredImg" }} : {{ .Title }}" 
 		src="{{ if $cover }}{{ $cover }}
-			{{- else }}{{ $getcover.Permalink }}
+			{{- else }}{{ $getcover.RelPermalink }}
 			{{- end -}}" 
 		role="doc-cover" 
 			>

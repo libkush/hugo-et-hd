@@ -1,7 +1,7 @@
 {{- define "head" }}
-{{- $listSty := resources.Get "css/ethd--go-list.css" -}}
-{{- $listMin := $listSty | resources.Minify }}
-<link rel="stylesheet" type="text/css" href="{{ $listMin.Permalink }}">
+{{- with resources.Get "css/ethd--go-list.css" | postCSS | minify -}}
+<link rel="stylesheet" type="text/css" href="{{ .RelPermalink }}">
+{{- end }}
 {{- end }}
 
 {{- define "main" }}

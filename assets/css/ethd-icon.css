@@ -183,33 +183,33 @@
 	color: var(--paper) !important;
 	transition: 250ms ease-out;
 }
-.share-to.facebook {color: #3b5998}
+/* .share-to.facebook {color: #3b5998} */
 .share-to.facebook:hover,
 .share-to.facebook:active {background-color: #2d4373}
-.share-to.twitter {color: #55acee}
+/* .share-to.twitter {color: #55acee} */
 .share-to.twitter:hover,
 .share-to.twitter:active {background-color: #2795e9}
-.share-to.tumblr {color: #35465C}
+/* .share-to.tumblr {color: #35465C} */
 .share-to.tumblr:hover,
 .share-to.tumblr:active {background-color: #222d3c}
-.share-to.email {color: #777}
+/* .share-to.email {color: #777} */
 .share-to.email:hover,
-.share-to.email:active {background-color: #5e5e5e}
-.share-to.pinterest {color: #bd081c}
+.share-to.email:active {background-color: var(--ink)}
+/* .share-to.pinterest {color: #bd081c} */
 .share-to.pinterest:hover,
 .share-to.pinterest:active {background-color: #8c0615}
-.share-to.linkedin {color: #0077b5}
+/* .share-to.linkedin {color: #0077b5} */
 .share-to.linkedin:hover,
 .share-to.linkedin:active {background-color: #046293}
-.share-to.reddit {color: #5f99cf}
+/* .share-to.reddit {color: #5f99cf} */
 .share-to.reddit:hover,
-.share-to.reddit:active {background-color: #3a80c1}
-.share-to.whatsapp {color: #25D366}
+.share-to.reddit:active {background-color: #FF5700}
+/* .share-to.whatsapp {color: #25D366} */
 .share-to.whatsapp:hover,
 .share-to.whatsapp:active {background-color: #1DA851}
-.share-to.telegram {color: #54A9EB}
+/* .share-to.telegram {color: #54A9EB} */
 .share-to.telegram:hover {background-color: #4B97D1}
-.share-to.print {color: var(--mid)}
+/* .share-to.print {color: var(--mid)} */
 .share-to.print:hover {background-color: var(--ink)}
 @media only screen and (max-width: 640px) {
 	#share-to > * {

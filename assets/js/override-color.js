@@ -5,19 +5,19 @@ function setColor() {
 			ethd.setProperty('--deep', '#fff');
 			ethd.setProperty('--ink', '#e7e2e2');
 			ethd.setProperty('--mid', '#7d8490');
-			ethd.setProperty('--link', '#ff0');
+			ethd.setProperty('--link', '#aeb7ff');
 			ethd.setProperty('--paper', '#13253d');
 		} else if (moreContrast.checked == true) {
 			ethd.setProperty('--deep', '#fff');
 			ethd.setProperty('--ink', '#fff');
 			ethd.setProperty('--mid', 'gray');
-			ethd.setProperty('--link', '#ff0');
+			ethd.setProperty('--link', '#aeb7ff');
 			ethd.setProperty('--paper', '#000');
 		} else {
 			ethd.setProperty('--deep', '#fff');
 			ethd.setProperty('--ink', '#f0f0f0');
 			ethd.setProperty('--mid', 'gray');
-			ethd.setProperty('--link', '#ff0');
+			ethd.setProperty('--link', '#aeb7ff');
 			ethd.setProperty('--paper', '#111');	
 		};
 	} else {

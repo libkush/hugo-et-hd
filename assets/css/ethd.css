@@ -44,7 +44,7 @@
 		--paper: #111;
 		--mid: gray;
 		--ink: #f0f0f0;
-		--link: #ff0;
+		--link: #aeb7ff;
 		--deep: #fff;
 	}
 	@media (prefers-contrast: more),
@@ -246,6 +246,14 @@ h6 {
 	font-variant-caps: all-small-caps;
 	letter-spacing: 0.33rem;
 }
+a.heading-anchor {
+    display: none;
+}
+h2:hover>a.heading-anchor,
+h3:hover>a.heading-anchor {
+    display: inline;
+    visibility: visible;
+}
 /* paragraph */
 p.subtitle {
 	font: italic 1.618rem/1.414 var(--rm), serif;
@@ -291,7 +299,7 @@ section > ul {
 	-webkit-padding-start: 5%;
 }
 mark {
-	background-color: #ff0;
+	background-color: #aeb7ff;
 }
 del,
 s {
@@ -354,7 +362,6 @@ a:visited {
 p > a::before {
 	padding-right: 0.3em;
 	font-size: 0.7em;
-	speak: none;
 	content: '\e914';
 	font-family: 'ethdsymb';
 }
@@ -384,6 +391,7 @@ a.plain:link,
 a.no-underline:link {
 	text-decoration: none;
 	-webkit-text-decoration-color: none;
+	text-decoration-color: none;
 }
 a.plain:link:hover,
 a.no-underline:link:hover {
@@ -401,7 +409,7 @@ button:hover,
 a.button:hover,
 a.button:visited:hover,
 a.reverse:hover {
-	background-color: #ff0;
+	background-color: #aeb7ff;
 	color: black;
 }
 button:disabled {
@@ -435,7 +443,6 @@ button.plain:hover {
 }
 :is(a:not(.no-focus), button, textarea):focus {
 	display: inline-table;
-	outline: 0.3rem solid var(--ink);
 	outline-offset: -0.1rem;
 	color: var(--paper) !important;
 	background-color: var(--ink) !important;	
@@ -443,6 +450,7 @@ button.plain:hover {
 	margin-bottom: -0.2rem !important;
 	text-decoration: none !important;
 	-webkit-text-decoration-color: none !important;
+	text-decoration-color: none !important;
 	animation: idle 2s step-end infinite;
 	-webkit-animation: idle 2s step-end infinite;
 	box-sizing: border-box;
@@ -507,6 +515,7 @@ audio {
 }
 img {
 	max-width: 100%;
+	height: auto;
 }
 figure {
 	padding: 0;
@@ -678,7 +687,6 @@ pre.fullwidth > code {
 	width: 100%;
 	margin-left: 0;
 }
-,
 div.fullwidth,
 table.fullwidth,
 section.fullwidth > p {
@@ -864,7 +872,6 @@ hr.none {
 		clear: both;
 		width: 90%;
 		margin: 2% 5%;
-		vertical-align: baseline;
 		position: relative;
 	}
 	label {
@@ -1001,7 +1008,7 @@ hr.none {
 	.pagebreak {
 		page-break-before: always;
 	}
-	header > h1 {
+	header h1 {
 		page-break-before: avoid !important;
 	}
 	h1,
