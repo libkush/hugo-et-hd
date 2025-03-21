@@ -14,8 +14,8 @@ tags = [
 	"responsive",
 ]
 [authors]
-	name = "Kush"
-	homepage = "https://kush.in"
+	name = "Foxx"
+	homepage = "https://foxx.ink"
 [original]
 	name = "Tufte"
 	homepage = "https://slashformotion.github.io/hugo-tufte/"
