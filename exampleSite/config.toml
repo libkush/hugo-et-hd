@@ -4,7 +4,6 @@ theme = 'hugo-et-hd'
 lastmod = ["lastmod", ":fileModTime", ":default"]
 canonifyURLs = true
 defaultContentLanguage = 'en'
-defaultContentLanguageInSubdir = true
 
 [params]
 	description = 'Hugo ET-HD exampleSite'
@@ -68,7 +67,7 @@ defaultContentLanguageInSubdir = true
 
 [languages]
 	[languages.en]
-		contentDir = 'content/en'
+		# contentDir = 'content/en'
 		disabled = false
 		languageCode = 'en-US'
 		languageDirection = 'ltr'
